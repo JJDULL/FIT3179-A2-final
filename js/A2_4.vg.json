@@ -1,0 +1,101 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "params": [
+    {
+      "name": "country_select",
+      "value": "Key Economies",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Key Economies",
+          "United States",
+          "China",
+          "Japan",
+          "Germany",
+          "India",
+          "United Kingdom",
+          "France",
+          "Brazil",
+          "Italy",
+          "Canada"
+        ],
+        "name": "Select Country: "
+      }
+    }
+  ],
+  "data": {"url": "data/gni_per_capita_ordered_2000_2022.csv", "format": {"type": "csv"}},
+  "transform": [
+    {"filter": {"field": "Country Name", "oneOf": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"]}},
+    {"filter": "datum['Country Name'] == country_select || country_select == 'Key Economies'"}
+  ],
+  "width": 680,
+  "height": 400,
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "tooltip": {
+          "content": "data"
+        },
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+        "y": {"field": "GNI per Capita", "type": "quantitative", "title": "GNI Per Capita"},
+        "color": {
+          "field": "Country Name", 
+          "type": "nominal", 
+          "title": "Country",
+          "scale": {
+            "domain": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
+            "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#1F77B4", "#FF7F0E"]
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "tooltip": {
+          "content": "data"
+        },
+        "size": 100
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "GNI per Capita", "type": "quantitative"},
+        "color": {
+          "field": "Country Name", 
+          "type": "nominal",
+          "scale": {
+            "domain": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
+            "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#1F77B4", "#FF7F0E"]
+          }
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Year": "2008", "Event": "⬇️Global Financial Crisis", "Y": 18000},
+          {"Year": "2020", "Event": "⬇️COVID-19", "Y": 20000}
+        ]
+      },
+      
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": -8,
+        "fontSize": 18,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Y", "type": "quantitative"},
+        "text": {"field": "Event", "type": "nominal"}
+      }
+    }
+  ]
+}

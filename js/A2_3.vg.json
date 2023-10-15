@@ -1,0 +1,65 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "data/hci_key_economies.csv"
+    },
+    "width": 735,
+    "height": 400,
+    "params": [
+      {
+        "name": "Year",
+        "value": 2020,
+        "bind": {
+          "input": "select",
+          "options": [2010, 2017, 2018, 2020],
+          "name": "Year: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": {
+          "field": "Country Name",
+          "oneOf": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"]
+        }
+      },
+      {
+        "filter": "datum.Year == Year"
+      }
+    ],
+    "mark": {
+      "type": "bar",
+      "size": 60
+    },
+    "encoding": {
+      "x": {
+        "field": "Country Name",
+        "type": "ordinal",
+        "axis": {
+          "labelAngle": 0
+        }
+      },
+      "y": {
+        "field": "HCI",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "Sex",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Male", "Female"],
+          "range": ["#5DADE2", "#e74c3c"]
+        },
+        "legend": {
+          "title": "Sex"
+        }
+      },
+      "tooltip": [
+        { "field": "Country Name", "type": "nominal", "title": "Country" },
+        { "field": "HCI", "type": "quantitative", "title": "HCI Value" },
+        { "field": "Sex", "type": "nominal", "title": "Sex" },
+        { "field": "Year", "type": "quantitative", "title": "Year" }
+      ]
+    }
+  }
+  

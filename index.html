@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="js/FIT3179_A2.js"></script>
+
+    <link rel="stylesheet" href="layout.css">
+    <title>FIT3179 Data Visualization 2</title>
+</head>
+<body>
+
+<div class="center">
+    <h1>A Deep Dive into the World Economy</h1> 
+    <!-- Introduction Section -->
+    <div class="intro-section" id="intro-section">
+        <h2>Introduction</h2>
+        Welcome to our in-depth exploration of the <b>world economy</b>. This interactive visualization offers a comprehensive look at various economic indicators, ranging from <b>Gross National Income (GNI) per capita</b> to health expenditures and the <b>Human Capital Index</b>. Our goal is to provide you with a holistic perspective on the economic disparities, trends, and performance across the globe.<br><br>
+        By navigating through the sections below, you'll gain access to <b>data-driven insights</b> that illuminate the nuances of the global economic landscape. Whether you're a student, researcher, or curious individual, this platform empowers you to understand patterns, changes, and key events shaping the world economy. <b>Dive in and let the data guide your exploration!</b>
+        <br>
+        <br>
+        <a href="#top">Back to Top</a>
+    </div>
+    
+    
+    
+    
+    <hr>
+    <!-- GNI Per Capita Section -->
+    <div id="sec1">
+        <h2><b>GNI Per Capita across the World</b></h2>
+        <div id="g1"></div>
+        <p id="sec1_text" class="text">
+            <b>Gross National Income (GNI)</b> refers to the total amount of money earned by a 
+            nation's residents and businesses, including any product or production income received from overseas. 
+            It is a broad measure that reflects the economic performance of a country.
+            <br><br>
+            Recognizing a nation's <b>Per Capita Gross National Income (GNI)</b> is an essential 
+            preliminary step in grasping the economic vitality and requirements of a country, 
+            as well as discerning the prevalent living standards accessible to its average inhabitant. 
+            The GNI per capita of a country usually shares a close connection with various other indicators, 
+            systematically reflecting the social, economic, and environmental welfare experienced by the nation 
+            and its populace. These correlated indicators collectively offer a broader perspective on the holistic 
+            well-being and quality of life within a nation, providing valuable insights into the areas where the 
+            country excels or requires improvement. 
+            <br><br>
+            The <b>Gross National Income (GNI) Per Capita</b> provides valuable insights into the economic health of nations, 
+            acting as a reliable indicator of average income levels within countries. Represented on a global scale, 
+            this map offers a comparative view of countries based on their GNI per capita, capturing economic disparities 
+            and facilitating an understanding of global economic distribution. This visualization spans from 2000 to 2022, 
+            enabling a temporal analysis of changes and trends in global economic performance.
+            <br><br>
+            For a more detailed analysis, we've chosen to investigate further into countries such as 
+            <span style="color:#E69F00">United States</span>, 
+            <span style="color:#56B4E9">China</span>, 
+            <span style="color:#009E73">Japan</span>, 
+            <span style="color:#F0E442">Germany</span>, 
+            <span style="color:#0072B2">India</span>, 
+            <span style="color:#D55E00">United Kingdom</span>, 
+            <span style="color:#CC79A7">France</span>, 
+            <span style="color:#999999">Brazil</span>, 
+            <span style="color:#1F77B4">Italy</span>, and 
+            <span style="color:#FF7F0E">Canada</span>.
+            <br><br>
+            <strong>How to Interact:</strong>
+            <br>
+            1. <strong>Time Slider (Year Selection):</strong> Located above the map, use the slider to navigate through different 
+            years, from 2000 to 2022. As you adjust the slider, the color intensity on the map will change to reflect the GNI per 
+            capita values for the selected year.
+            <br>
+            2. <strong>Hover Over Countries:</strong> Positioning your cursor over a specific country will display a tooltip. 
+            This tooltip provides detailed information about the country's name, its income per person (in USD), and the data year. 
+            Countries in light grey indicate unavailable data for the selected year.
+            <br>
+            3. <strong>Color Legend:</strong> The color gradient, ranging from lighter to darker shades, represents GNI per capita 
+            values. Darker shades indicate higher GNI per capita, while lighter shades represent lower values. This gradient offers 
+            a quick visual comparison between countries.
+            <br>
+            4. <strong>Graticules:</strong> The white gridlines on the map, known as graticules, provide geographical reference 
+            points, assisting in locating countries based on latitude and longitude.
+        </p>
+        <a href="#top">Back to Top</a>
+    </div>
+    
+    
+    
+
+    <hr>
+    <div id="sec2">
+        <h2><b>Health Expenditure Per Capita Over Time for Key Economies</b></h2>
+        <div id="g2"></div>
+        <p id="sec2_text" class="text">
+            <b>Health Expenditure</b> is a crucial indicator reflecting the financial priorities of a nation concerning the health of its populace. The amount of money allocated per person can provide insights into the quality, accessibility, and extent of healthcare services within a country.
+            <br><br>
+            Monitoring the <b>Health Expenditure Per Capita over time</b> for key economies allows for a comparative analysis. This data can shed light on the effectiveness of healthcare investments, indicate possible health disparities among nations, and provide insights into a country's commitment to the health and well-being of its citizens.
+            <br><br>
+            From the graph, it's evident that the <span style="color:#E69F00;">United States</span> consistently leads in health expenditure per capita, showing a sustained increase over the years. Meanwhile, countries like <span style="color:#56B4E9;">China</span> and <span style="color:#0072B2;">India</span> began with lower expenditures but exhibit a steady rise, emphasizing their growing investments in healthcare. European nations such as <span style="color:#009E73;">Japan</span>, <span style="color:#F0E442;">Germany</span>, and <span style="color:#D55E00;">United Kingdom</span> maintain a relatively stable health expenditure, reflecting their established healthcare systems. Interestingly, <span style="color:#CC79A7;">France</span> and <span style="color:#1F77B4;">Italy</span> follow similar trends, suggesting possible parallels in their health policies. In the Americas, both <span style="color:#999999;">Brazil</span> and <span style="color:#FF7F0E;">Canada</span> have shown consistent investments in healthcare, with Canada's expenditure being relatively higher.
+            <br><br>
+            <strong>How to Interact:</strong>
+            <br>
+            1. <strong>Country Selection:</strong> Use the drop-down menu to select a specific country or view data for all countries simultaneously. The line chart will adjust accordingly to display the data for your selection.
+            <br>
+            2. <strong>Time Range Selection:</strong> Below the main line chart, there's a smaller chart that allows you to adjust the time range. Click and drag to select a specific time interval, and the main chart will zoom into that selected range.
+            <br>
+            3. <strong>Hover Over Data Points:</strong> Hovering over specific data points on the line chart will display a tooltip. This tooltip provides detailed information about the selected year and the health expenditure per capita for that year in current US dollars.
+            <br>
+            4. <strong>Color Coding:</strong> Different countries are represented using distinct colors, making it easy to distinguish between them in the visualization. This feature is especially useful when viewing data for all countries simultaneously.
+        </p>
+        <a href="#top">Back to Top</a>
+    </div>
+    
+    
+    
+
+    <hr>
+    <div id="sec3">
+        <h2><b>Human Capital Index for Key Economies</b></h2>
+        <div id="g3"></div>
+        <p id="sec3_text" class="text">
+            The <b>Human Capital Index (HCI)</b> provides a holistic view of how countries invest in their most valuable asset: their people. This index quantifies the potential human capital that can be realized by a child born today until the age of 18, considering the prevailing conditions of health and education.
+            <br><br>
+            Evaluating HCI across key economies underscores the varying levels of emphasis nations place on health and education. A higher index hints at better potential productivity and earnings prospects for the country's future workforce.
+            <br><br>
+            Among the nations charted, <span style="color:#1F77B4">Canada</span> stands out for its exemplary commitment to human capital, as reflected in its leading HCI scores. An intriguing observation across the board is the marginally higher HCI values for females—denoted in <span style="color:#e74c3c">red</span>—as opposed to males, represented in <span style="color:#3498db">blue</span>. This trend suggests that women might, on average, experience slight advantages in certain areas like health or education in these countries.
+            <br><br>
+            <strong>How to Interact:</strong>
+            <br>
+            1. <strong>Year Selection:</strong> Navigate through different years using the dropdown. The HCI representation will adjust according to the selected year, offering a dynamic view of changes over time.
+            <br>
+            2. <strong>Hover Over Bars:</strong> For detailed insights on a particular country's HCI and a breakdown by gender, simply hover over the corresponding bar.
+            <br>
+            3. <strong>Color Coding:</strong> Gender distinctions are visually represented by colors: <span style="color:#5DADE2">blue</span> for males and <span style="color:#e74c3c">red</span> for females. This contrast aids in discerning potential disparities in HCI values between the two genders.
+        </p>
+        <a href="#top">Back to Top</a>
+    </div>
+    
+    
+
+    <hr>
+    <div id="sec4">
+        <h2><b>GNI Per Capita over time for Key Economies</b></h2>
+        <div id="g4"></div>
+        <p id="sec4_text" class="text">
+            The <b>Gross National Income (GNI) per capita</b> is a crucial indicator of a country's economic performance and average income of its citizens. Observing its evolution over time reveals patterns of growth, stability, or decline, offering insights into a nation's economic health and its responsiveness to global events.
+            <br><br>
+            The provided graph presents the trends from 2000 to 2022. The impact of major global events, such as the <b>Global Financial Crisis in 2008</b> and the <b>COVID-19 pandemic in 2020</b>, is evident. Notably, countries like <span style="color:#E69F00">United States</span> and <span style="color:#009E73">Japan</span> showcase a steady increase in GNI per capita over the years, while countries like <span style="color:#0072B2">India</span> display significant growth in the recent years. The <span style="color:#FF7F0E">Canada</span> line indicates consistent economic stability, even in the face of global challenges.
+            <br>
+            <strong>How to Interact:</strong>
+            <br>
+            1. <strong>Country Selection:</strong> Use the drop-down menu to select a specific country. Choosing 'Key Economies' displays trends for all the listed countries simultaneously.
+            <br>
+            2. <strong>Hover Over Lines & Points:</strong> Hover over specific points or line segments to view detailed GNI per capita values for a particular year and country.
+            <br>
+            3. <strong>Color Coding:</strong> Each country has its unique color code, making it easy to identify. For instance, <span style="color:#E69F00">United States</span>, <span style="color:#56B4E9">China</span>, and <span style="color:#999999">Brazil</span> are represented by their respective colors.
+            <br>
+            4. <strong>Event Markers:</strong> Key events like the <b>Global Financial Crisis</b> and <b>COVID-19</b> pandemic are highlighted on the graph, giving context to changes in trends.
+        </p>
+        <a href="#top">Back to Top</a>
+    </div>
+    
+    
+    
+
+    <div id="author">Crafted by Yuanji Jin
+    </div>
+
+
+</div>
+
+</body>
+</html>

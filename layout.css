@@ -1,0 +1,53 @@
+body {
+   font-family: 'Georgia', serif;
+   background-color: #fafafa; /* Off-white background */
+   color: #333333; /* Dark grey text */
+}
+
+.center {
+   text-align: center;
+   margin: auto;
+   width: 850px;
+   background-color: #f5f5f5; /* Light grey section background */
+   padding: 20px; /* Consolidated padding shorthand */
+}
+
+.viz {
+   text-align: center;
+}
+
+p {
+   text-align: justify;
+   columns: 2;
+   line-height: 20px;
+   color: #333333; /* Dark grey text for paragraphs */
+}
+
+h1 {
+   font-size: 50px;
+   margin: 0px;
+   color: #000000; /* Black text for main headers */
+}
+
+h4 {
+   color: grey;
+   font-size: 12px;
+   font-weight: 300;
+   text-align: right;
+}
+
+a {
+   color: #000000; /* Black text for links */
+   text-decoration: none; /* Remove underlines from links */
+}
+
+a:hover {
+   text-decoration: underline; /* Add underline back on hover */
+}
+
+#author {
+   font-size: 12px;
+   text-align: right;
+}
+
+

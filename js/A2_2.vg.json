@@ -1,0 +1,89 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "data/health_expenditure_per_capita.csv"},
+    "params": [
+        {
+            "name": "country_select",
+            "value": "All Countries",
+            "bind": {
+                "input": "select",
+                "options": ["All Countries", "United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
+                "name": "Country :"
+            }
+        }
+    ],
+    "vconcat": [
+        {
+            "width": 680,
+            "height": 240,
+            "mark": {
+                "type": "line",
+                "point": {
+                    "filled": true,
+                    "size": 100
+                },
+                "strokeWidth": 3
+            },
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "scale": {"domain": {"param": "brush"}},
+                    "axis": {"title": "", "tickCount": 10}
+                },
+                "y": {
+                    "field": "Health expenditure per capita",
+                    "type": "quantitative",
+                    "title": "Health Expenditure per Capita (current US$)",
+                    "axis": {"format": "s"},
+                    "scale": {"zero": false}
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
+                        "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#1F77B4", "#FF7F0E"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "Year", "type": "ordinal", "title": "Year"},
+                    {"field": "Health expenditure per capita", "type": "quantitative", "title": "Health Expenditure per Capita (current US$)", "format": ".4s"}
+                ]
+            },
+            "transform": [
+                {"filter": "country_select == 'All Countries' || datum['Country'] == country_select"},
+                {"filter": {"param": "brush", "field": "Year"}}
+            ]
+        },
+        {
+            "width": 680,
+            "height": 60,
+            "mark": "line",
+            "params": [
+                {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+            ],
+            "encoding": {
+                "x": {"field": "Year", "type": "ordinal", "axis": {"tickCount": 10}},
+                "y": {
+                    "field": "Health expenditure per capita",
+                    "type": "quantitative",
+                    "axis": {"tickCount": 3, "grid": false, "format": ".4s"}
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
+                        "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#1F77B4", "#FF7F0E"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "Year", "type": "ordinal", "title": "Year"},
+                    {"field": "Health expenditure per capita", "type": "quantitative", "title": "Health Expenditure per Capita (current US$)", "format": ".4s"}
+                ]
+            },
+            "transform": [{"filter": "country_select == 'All Countries' || datum['Country'] == country_select"}]
+        }
+    ]
+}
