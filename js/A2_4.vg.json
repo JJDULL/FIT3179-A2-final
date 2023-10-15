@@ -48,7 +48,7 @@
           "title": "Country",
           "scale": {
             "domain": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
-            "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#1F77B4", "#FF7F0E"]
+            "range": ["#E69F00", "#56B4E9", "#F0E442", "#D55E00", "#0072B2", "#999999", "#CC79A7", "#1F77B4", "#663399", "#FF7F0E"]
           }
         }
       }
@@ -70,7 +70,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
-            "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#1F77B4", "#FF7F0E"]
+            "range": ["#E69F00", "#56B4E9", "#F0E442", "#D55E00", "#0072B2", "#999999", "#CC79A7", "#1F77B4", "#663399", "#FF7F0E"]
           }
         }
       }

@@ -43,8 +43,8 @@
                     "type": "nominal",
                     "scale": {
                         "domain": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
-                        "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#1F77B4", "#FF7F0E"]
-                    }
+                        "range": ["#E69F00", "#56B4E9", "#D3D3D3", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#4B0082", "#FFA500"]
+                      }                      
                 },
                 "tooltip": [
                     {"field": "Year", "type": "ordinal", "title": "Year"},
@@ -75,8 +75,9 @@
                     "type": "nominal",
                     "scale": {
                         "domain": ["United States", "China", "Japan", "Germany", "India", "United Kingdom", "France", "Brazil", "Italy", "Canada"],
-                        "range": ["#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#1F77B4", "#FF7F0E"]
-                    }
+                        "range": ["#E69F00", "#56B4E9", "#D3D3D3", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#4B0082", "#FFA500"]
+                      }
+                      
                 },
                 "tooltip": [
                     {"field": "Year", "type": "ordinal", "title": "Year"},
